@@ -4,7 +4,7 @@
 #
 Name     : qtscxml
 Version  : 5.10.1
-Release  : 3
+Release  : 4
 URL      : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtscxml-everywhere-src-5.10.1.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtscxml-everywhere-src-5.10.1.tar.xz
 Summary  : No detailed summary available
@@ -44,6 +44,14 @@ Provides: qtscxml-devel
 dev components for the qtscxml package.
 
 
+%package extras
+Summary: extras components for the qtscxml package.
+Group: Default
+
+%description extras
+extras components for the qtscxml package.
+
+
 %package lib
 Summary: lib components for the qtscxml package.
 Group: Libraries
@@ -73,7 +81,7 @@ make INSTALL_ROOT=%{buildroot} install
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/qscxmlc
+%exclude /usr/bin/qscxmlc
 
 %files dev
 %defattr(-,root,root,-)
@@ -128,6 +136,10 @@ make INSTALL_ROOT=%{buildroot} install
 /usr/lib64/qt5/mkspecs/features/qscxmlc.prf
 /usr/lib64/qt5/mkspecs/modules/qt_lib_scxml.pri
 /usr/lib64/qt5/mkspecs/modules/qt_lib_scxml_private.pri
+
+%files extras
+%defattr(-,root,root,-)
+/usr/bin/qscxmlc
 
 %files lib
 %defattr(-,root,root,-)
