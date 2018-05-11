@@ -4,7 +4,7 @@
 #
 Name     : qtscxml
 Version  : 5.10.1
-Release  : 6
+Release  : 7
 URL      : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtscxml-everywhere-src-5.10.1.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtscxml-everywhere-src-5.10.1.tar.xz
 Summary  : No detailed summary available
