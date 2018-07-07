@@ -4,7 +4,7 @@
 #
 Name     : qtscxml
 Version  : 5.11.1
-Release  : 9
+Release  : 10
 URL      : http://download.qt.io/official_releases/qt/5.11/5.11.1/submodules/qtscxml-everywhere-src-5.11.1.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.11/5.11.1/submodules/qtscxml-everywhere-src-5.11.1.tar.xz
 Summary  : No detailed summary available
@@ -86,7 +86,7 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1530975494
+export SOURCE_DATE_EPOCH=1530976427
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/qtscxml
 cp LICENSE.LGPL3 %{buildroot}/usr/share/doc/qtscxml/LICENSE.LGPL3
