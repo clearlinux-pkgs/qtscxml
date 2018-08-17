@@ -4,7 +4,7 @@
 #
 Name     : qtscxml
 Version  : 5.11.1
-Release  : 10
+Release  : 11
 URL      : http://download.qt.io/official_releases/qt/5.11/5.11.1/submodules/qtscxml-everywhere-src-5.11.1.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.11/5.11.1/submodules/qtscxml-everywhere-src-5.11.1.tar.xz
 Summary  : No detailed summary available
@@ -13,15 +13,14 @@ License  : Apache-2.0 GFDL-1.3 GPL-3.0 LGPL-3.0
 Requires: qtscxml-bin
 Requires: qtscxml-lib
 Requires: qtscxml-license
-BuildRequires : cmake
+BuildRequires : buildreq-cmake
+BuildRequires : buildreq-qmake
 BuildRequires : pkgconfig(Qt5Core)
 BuildRequires : pkgconfig(Qt5Gui)
 BuildRequires : pkgconfig(Qt5Network)
 BuildRequires : pkgconfig(Qt5Qml)
 BuildRequires : pkgconfig(Qt5Test)
 BuildRequires : pkgconfig(Qt5Widgets)
-BuildRequires : qtbase-dev
-BuildRequires : qtbase-extras
 
 %description
 Test Suite taken from https://github.com/jbeard4/scxml-test-framework,
@@ -46,14 +45,6 @@ Provides: qtscxml-devel
 
 %description dev
 dev components for the qtscxml package.
-
-
-%package extras
-Summary: extras components for the qtscxml package.
-Group: Default
-
-%description extras
-extras components for the qtscxml package.
 
 
 %package lib
@@ -86,12 +77,12 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1530976427
+export SOURCE_DATE_EPOCH=1534476270
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/qtscxml
-cp LICENSE.LGPL3 %{buildroot}/usr/share/doc/qtscxml/LICENSE.LGPL3
 cp LICENSE.FDL %{buildroot}/usr/share/doc/qtscxml/LICENSE.FDL
 cp LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/doc/qtscxml/LICENSE.GPL3-EXCEPT
+cp LICENSE.LGPL3 %{buildroot}/usr/share/doc/qtscxml/LICENSE.LGPL3
 cp tests/3rdparty/scion-tests/LICENSE.txt %{buildroot}/usr/share/doc/qtscxml/tests_3rdparty_scion-tests_LICENSE.txt
 cp tests/3rdparty/scion-tests/scxml-test-framework/LICENSE.txt %{buildroot}/usr/share/doc/qtscxml/tests_3rdparty_scion-tests_scxml-test-framework_LICENSE.txt
 %make_install
@@ -105,6 +96,7 @@ cp tests/3rdparty/scion-tests/scxml-test-framework/LICENSE.txt %{buildroot}/usr/
 
 %files dev
 %defattr(-,root,root,-)
+/usr/bin/qscxmlc
 /usr/include/qt5/QtScxml/5.11.1/QtScxml/private/qscxmlcompiler_p.h
 /usr/include/qt5/QtScxml/5.11.1/QtScxml/private/qscxmlcppdatamodel_p.h
 /usr/include/qt5/QtScxml/5.11.1/QtScxml/private/qscxmldatamodel_p.h
@@ -155,10 +147,6 @@ cp tests/3rdparty/scion-tests/scxml-test-framework/LICENSE.txt %{buildroot}/usr/
 /usr/lib64/qt5/mkspecs/features/qscxmlc.prf
 /usr/lib64/qt5/mkspecs/modules/qt_lib_scxml.pri
 /usr/lib64/qt5/mkspecs/modules/qt_lib_scxml_private.pri
-
-%files extras
-%defattr(-,root,root,-)
-/usr/bin/qscxmlc
 
 %files lib
 %defattr(-,root,root,-)
