@@ -4,9 +4,9 @@
 #
 Name     : qtscxml
 Version  : 5.11.2
-Release  : 13
-URL      : http://download.qt.io/official_releases/qt/5.11/5.11.2/submodules/qtscxml-everywhere-src-5.11.2.tar.xz
-Source0  : http://download.qt.io/official_releases/qt/5.11/5.11.2/submodules/qtscxml-everywhere-src-5.11.2.tar.xz
+Release  : 14
+URL      : http://download.qt.io/official_releases/qt/5.11/5.11.2/submodules/qtscxml-everywhere-src-5.11.2.zip
+Source0  : http://download.qt.io/official_releases/qt/5.11/5.11.2/submodules/qtscxml-everywhere-src-5.11.2.zip
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 GFDL-1.3 GPL-3.0 LGPL-3.0
@@ -77,7 +77,7 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1537307911
+export SOURCE_DATE_EPOCH=1537311631
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/qtscxml
 cp LICENSE.FDL %{buildroot}/usr/share/doc/qtscxml/LICENSE.FDL
