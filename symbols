@@ -7,7 +7,7 @@ libQt5Scxml.so.5:Qt_5.12
 libQt5Scxml.so.5:Qt_5.13
 libQt5Scxml.so.5:Qt_5.14
 libQt5Scxml.so.5:Qt_5.15
-libQt5Scxml.so.5:Qt_5.15.0_PRIVATE_API
+libQt5Scxml.so.5:Qt_5.15.2_PRIVATE_API
 libQt5Scxml.so.5:Qt_5.2
 libQt5Scxml.so.5:Qt_5.3
 libQt5Scxml.so.5:Qt_5.4
