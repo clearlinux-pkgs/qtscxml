@@ -4,7 +4,7 @@
 #
 Name     : qtscxml
 Version  : 5.15.2
-Release  : 31
+Release  : 32
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtscxml-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtscxml-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
@@ -78,14 +78,14 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1655665062
+export SOURCE_DATE_EPOCH=1662657275
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtscxml
-cp %{_builddir}/qtscxml-everywhere-src-5.15.2/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtscxml/61907422fefcd2313a9b570c31d203a6dbebd333
-cp %{_builddir}/qtscxml-everywhere-src-5.15.2/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtscxml/e93757aefa405f2c9a8a55e780ae9c39542dfc3a
-cp %{_builddir}/qtscxml-everywhere-src-5.15.2/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtscxml/f45ee1c765646813b442ca58de72e20a64a7ddba
-cp %{_builddir}/qtscxml-everywhere-src-5.15.2/tests/3rdparty/scion-tests/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtscxml/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
-cp %{_builddir}/qtscxml-everywhere-src-5.15.2/tests/3rdparty/scion-tests/scxml-test-framework/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtscxml/7df059597099bb7dcf25d2a9aedfaf4465f72d8d
+cp %{_builddir}/qtscxml-everywhere-src-%{version}/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtscxml/61907422fefcd2313a9b570c31d203a6dbebd333 || :
+cp %{_builddir}/qtscxml-everywhere-src-%{version}/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtscxml/e93757aefa405f2c9a8a55e780ae9c39542dfc3a || :
+cp %{_builddir}/qtscxml-everywhere-src-%{version}/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtscxml/f45ee1c765646813b442ca58de72e20a64a7ddba || :
+cp %{_builddir}/qtscxml-everywhere-src-%{version}/tests/3rdparty/scion-tests/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtscxml/7df059597099bb7dcf25d2a9aedfaf4465f72d8d || :
+cp %{_builddir}/qtscxml-everywhere-src-%{version}/tests/3rdparty/scion-tests/scxml-test-framework/LICENSE.txt %{buildroot}/usr/share/package-licenses/qtscxml/7df059597099bb7dcf25d2a9aedfaf4465f72d8d || :
 %make_install
 
 %files
